@@ -13,15 +13,18 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
+using Newtonsoft.Json;
+
 namespace PPWCode.API.Core
 {
     [DataContract]
     public abstract class PersistentDto<TIdentity> : HRefDto
         where TIdentity : struct, IEquatable<TIdentity>
     {
-        [DataMember]
+        [JsonIgnore]
         public TIdentity? Id { get; set; }
 
+        [JsonIgnore]
         public bool IsTransient
             => EqualityComparer<TIdentity?>.Default.Equals(Id, default);
     }
