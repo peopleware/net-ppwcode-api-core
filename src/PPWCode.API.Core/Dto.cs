@@ -14,7 +14,7 @@ using System.Runtime.Serialization;
 namespace PPWCode.API.Core
 {
     [DataContract]
-    public abstract class Dto
+    public abstract class Dto : IDto
     {
     }
 }

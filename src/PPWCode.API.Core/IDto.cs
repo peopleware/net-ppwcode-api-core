@@ -9,24 +9,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
-
-using Newtonsoft.Json;
-
 namespace PPWCode.API.Core
 {
-    [DataContract]
-    public abstract class PersistentDto<TIdentity>
-        : LinksDto,
-          IPersistentDto<TIdentity>
-        where TIdentity : struct, IEquatable<TIdentity>
+    public interface IDto
     {
-        public TIdentity? Id { get; set; }
-
-        [JsonIgnore]
-        public bool IsTransient
-            => EqualityComparer<TIdentity?>.Default.Equals(Id, default);
     }
 }

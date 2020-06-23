@@ -11,22 +11,14 @@
 
 using System;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 
-using Newtonsoft.Json;
+using JetBrains.Annotations;
 
 namespace PPWCode.API.Core
 {
-    [DataContract]
-    public abstract class PersistentDto<TIdentity>
-        : LinksDto,
-          IPersistentDto<TIdentity>
-        where TIdentity : struct, IEquatable<TIdentity>
+    public interface ILinksDto : IDto
     {
-        public TIdentity? Id { get; set; }
-
-        [JsonIgnore]
-        public bool IsTransient
-            => EqualityComparer<TIdentity?>.Default.Equals(Id, default);
+        [CanBeNull]
+        IDictionary<string, Uri> Links { get; set; }
     }
 }

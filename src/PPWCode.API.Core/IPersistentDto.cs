@@ -9,14 +9,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System.Runtime.Serialization;
+using System;
+
+using JetBrains.Annotations;
 
 namespace PPWCode.API.Core
 {
-    [DataContract]
-    public class HRefDto : Dto
+    interface IPersistentDto<TIdentity> : ILinksDto
+        where TIdentity : struct, IEquatable<TIdentity>
     {
-        [DataMember]
-        public string HRef { get; set; }
+        [CanBeNull]
+        TIdentity? Id { get; set; }
+
+        bool IsTransient { get; }
     }
 }
