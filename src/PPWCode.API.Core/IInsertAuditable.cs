@@ -13,7 +13,7 @@ using System;
 
 namespace PPWCode.API.Core
 {
-    public interface IInsertAuditable
+    public interface IInsertAuditable : IDto
     {
         DateTime? CreatedAt { get; set; }
         string CreatedBy { get; set; }
