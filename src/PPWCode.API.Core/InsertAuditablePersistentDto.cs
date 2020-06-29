@@ -16,7 +16,7 @@ namespace PPWCode.API.Core
 {
     [DataContract]
     public abstract class InsertAuditablePersistentDto<TIdentity>
-        : PersistentDto<TIdentity>,
+        : LinksDto<TIdentity>,
           IInsertAuditable
         where TIdentity : struct, IEquatable<TIdentity>
     {
