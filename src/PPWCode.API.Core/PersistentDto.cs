@@ -19,7 +19,7 @@ namespace PPWCode.API.Core
 {
     [DataContract]
     public abstract class PersistentDto<TIdentity>
-        : LinksDto,
+        : Dto,
           IPersistentDto<TIdentity>
         where TIdentity : struct, IEquatable<TIdentity>
     {

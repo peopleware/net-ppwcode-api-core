@@ -16,12 +16,13 @@ using System.Runtime.Serialization;
 namespace PPWCode.API.Core
 {
     [DataContract]
-    public class LinksDto
-        : Dto,
-          ILinksDto
+    public class LinksDto<TIdentity>
+        : PersistentDto<TIdentity>,
+          ILinksDto<TIdentity>
+        where TIdentity : struct, IEquatable<TIdentity>
     {
         /// <inheritdoc />
-        [DataMember]
-        public IDictionary<string, Uri> Links { get; set; }
+        [DataMember(Name = "_links")]
+        public IDictionary<string, IDictionary<string, object>> Links { get; set; }
     }
 }
