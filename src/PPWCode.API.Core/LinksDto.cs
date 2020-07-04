@@ -24,5 +24,7 @@ namespace PPWCode.API.Core
         /// <inheritdoc />
         [DataMember(Name = "_links")]
         public IDictionary<string, IDictionary<string, object>> Links { get; set; }
+
+        public Uri HRef { get; set; }
     }
 }

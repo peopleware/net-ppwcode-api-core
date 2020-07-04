@@ -21,5 +21,8 @@ namespace PPWCode.API.Core
     {
         [CanBeNull]
         IDictionary<string, IDictionary<string, object>> Links { get; set; }
+
+        [CanBeNull]
+        Uri HRef { get; set; }
     }
 }
