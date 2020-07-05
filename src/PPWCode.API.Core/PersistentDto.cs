@@ -23,6 +23,7 @@ namespace PPWCode.API.Core
           IPersistentDto<TIdentity>
         where TIdentity : struct, IEquatable<TIdentity>
     {
+        [DataMember]
         public TIdentity? Id { get; set; }
 
         [JsonIgnore]
