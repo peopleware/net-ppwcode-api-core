@@ -18,7 +18,7 @@ namespace PPWCode.API.Core
     [DataContract]
     public class LinksDto<TIdentity>
         : PersistentDto<TIdentity>,
-          ILinksDto<TIdentity>
+          ILinksDto
         where TIdentity : struct, IEquatable<TIdentity>
     {
         /// <inheritdoc />

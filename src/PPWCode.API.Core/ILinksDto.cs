@@ -16,8 +16,7 @@ using JetBrains.Annotations;
 
 namespace PPWCode.API.Core
 {
-    public interface ILinksDto<TIdentity> : IPersistentDto<TIdentity>
-        where TIdentity : struct, IEquatable<TIdentity>
+    public interface ILinksDto
     {
         [CanBeNull]
         IDictionary<string, IDictionary<string, object>> Links { get; set; }
