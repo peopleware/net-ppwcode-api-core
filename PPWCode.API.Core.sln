@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26124.0
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "package", "package", "{9D64648C-707A-41A2-90C9-5269BEF4163E}"
+ProjectSection(SolutionItems) = preProject
+	LICENSE = LICENSE
+	NOTICE = NOTICE
+	README.md = README.md
+	assets\ppwcode_logo.jpg = assets\ppwcode_logo.jpg
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "psake", "psake", "{10D4399C-93EA-47D0-B04F-E7F2560239A9}"
+ProjectSection(SolutionItems) = preProject
+	init-psake.ps1 = init-psake.ps1
+	psakefile.ps1 = psakefile.ps1
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution-items", "solution-items", "{CA9DD4D5-1345-4BAD-8454-6AB4275320A6}"
+ProjectSection(SolutionItems) = preProject
+	src\Directory.Build.props = src\Directory.Build.props
+	src\version.props = src\version.props
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "style-cop", "style-cop", "{99187429-7BA8-4564-9B0B-A201403852D2}"
+ProjectSection(SolutionItems) = preProject
+	src\StyleCop.ruleset = src\StyleCop.ruleset
+	src\StyleCop-Tests.ruleset = src\StyleCop-Tests.ruleset
+EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPWCode.API.Core", "src\PPWCode.API.Core\PPWCode.API.Core.csproj", "{BC345D2D-BD8C-4ACD-AC40-8FFCD043DAC8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC345D2D-BD8C-4ACD-AC40-8FFCD043DAC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC345D2D-BD8C-4ACD-AC40-8FFCD043DAC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC345D2D-BD8C-4ACD-AC40-8FFCD043DAC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC345D2D-BD8C-4ACD-AC40-8FFCD043DAC8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
