@@ -66,6 +66,7 @@ Upgrade dependencies
     <ContinuousIntegrationBuild>$(TeamCityBuild)</ContinuousIntegrationBuild>
     <!-- include the pdb in the nuget package -->
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <DebugType>embedded</DebugType>
   </PropertyGroup>
 
   <!-- include supporting files in NuGet package -->
