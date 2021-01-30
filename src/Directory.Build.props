@@ -47,6 +47,11 @@
     <PackageReleaseNotes>
       <![CDATA[
 1.0.0 Initial release
+1.1.0 Add framework net5.0
+Upgrade dependencies
+* System.ComponentModel.Annotations 4.7.0 -> 5.0.0
+* Castle.Windsor 5.1.0 -> 5.1.1
+* JetBrains.Annotations 2020.1.0.0 -> 2020.3.0.0
       ]]>
     </PackageReleaseNotes>
 
@@ -88,6 +93,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="JetBrains.Annotations" Version="2020.1.0" PrivateAssets="All" />
+    <PackageReference Include="JetBrains.Annotations" Version="2020.3.0.0" PrivateAssets="All" />
   </ItemGroup>
 </Project>
