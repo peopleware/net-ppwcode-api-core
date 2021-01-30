@@ -37,7 +37,7 @@ namespace PPWCode.API.Core.Contracts
             LineNumber = lineNumber;
         }
 
-        public ContractViolation(SerializationInfo info, StreamingContext context)
+        protected ContractViolation(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
         }

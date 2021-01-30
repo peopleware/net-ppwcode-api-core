@@ -28,7 +28,7 @@ namespace PPWCode.API.Core.Contracts
         {
         }
 
-        public PostConditionViolation(SerializationInfo info, StreamingContext context)
+        protected PostConditionViolation(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
         }

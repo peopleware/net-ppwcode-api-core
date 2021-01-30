@@ -28,7 +28,7 @@ namespace PPWCode.API.Core.Contracts
         {
         }
 
-        public AssertViolation(SerializationInfo info, StreamingContext context)
+        protected AssertViolation(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
         }

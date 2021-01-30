@@ -9,6 +9,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using System;
+
 using JetBrains.Annotations;
 
 using Microsoft.AspNetCore.Mvc;
@@ -25,35 +27,20 @@ namespace PPWCode.API.Core.Services
         : Service,
           IJsonFormatterService
     {
-        private JsonSerializerSettings _cachedSettings;
+        private readonly Lazy<JsonSerializerSettings> _cachedSettings;
 
         public JsonFormatterService(
             [NotNull] IOptions<MvcNewtonsoftJsonOptions> options)
         {
             Options = options.Value;
+            _cachedSettings = new Lazy<JsonSerializerSettings>(() => Options.SerializerSettings);
         }
 
         [NotNull]
         public MvcNewtonsoftJsonOptions Options { get; }
 
         private JsonSerializerSettings CachedSettings
-        {
-            get
-            {
-                if (_cachedSettings == null)
-                {
-                    lock (this)
-                    {
-                        if (_cachedSettings == null)
-                        {
-                            _cachedSettings = Options.SerializerSettings;
-                        }
-                    }
-                }
-
-                return _cachedSettings;
-            }
-        }
+            => _cachedSettings.Value;
 
         public JsonSerializerSettings Settings
             => Options.SerializerSettings.DeepClone();
