@@ -27,7 +27,7 @@
     <WarningsAsErrors />
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
-    <LangVersion>7.3</LangVersion>
+    <LangVersion>latest</LangVersion>
 
     <!-- nuget package -->
     <Description>The PPWCode API.Core library</Description>
