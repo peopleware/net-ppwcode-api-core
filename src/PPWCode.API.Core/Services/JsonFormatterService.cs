@@ -13,8 +13,13 @@ using System;
 
 using JetBrains.Annotations;
 
+#if NETCOREAPP3_1_OR_GREATER
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+#elif NETSTANDARD2_0
+#else
+     #error   Building for unsupported framework
+#endif
 
 using Newtonsoft.Json;
 
@@ -29,21 +34,31 @@ namespace PPWCode.API.Core.Services
     {
         private readonly Lazy<JsonSerializerSettings> _cachedSettings;
 
+#if NETCOREAPP3_1_OR_GREATER
+
         public JsonFormatterService(
             [NotNull] IOptions<MvcNewtonsoftJsonOptions> options)
         {
-            Options = options.Value;
-            _cachedSettings = new Lazy<JsonSerializerSettings>(() => Options.SerializerSettings);
+            _cachedSettings = new Lazy<JsonSerializerSettings>(() => options.Value.SerializerSettings);
         }
 
-        [NotNull]
-        public MvcNewtonsoftJsonOptions Options { get; }
+#elif NETSTANDARD2_0
+
+        public JsonFormatterService(
+            [NotNull] JsonSerializerSettings serializerSettings)
+        {
+            _cachedSettings = new Lazy<JsonSerializerSettings>(() => serializerSettings);
+        }
+
+#else
+     #error   Building for unsupported framework
+#endif
 
         private JsonSerializerSettings CachedSettings
             => _cachedSettings.Value;
 
         public JsonSerializerSettings Settings
-            => Options.SerializerSettings.DeepClone();
+            => CachedSettings.DeepClone();
 
         /// <inheritdoc />
         public string SerializeObject<T>(T value, JsonSerializerSettings settings)
