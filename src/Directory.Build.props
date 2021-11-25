@@ -43,6 +43,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;CONTRACTS_PRE;CONTRACTS_POST;CONTRACTS_INVARIANT;CONTRACTS_ASSERT;JETBRAINS_ANNOTATIONS</DefineConstants>
   </PropertyGroup>
 
   <!-- properties for release configuration -->
@@ -51,7 +52,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>TRACE;CONTRACTS_PRE;CONTRACTS_POST;CONTRACTS_INVARIANT;CONTRACTS_ASSERT;JETBRAINS_ANNOTATIONS</DefineConstants>
   </PropertyGroup>
 
   <!-- build paths -->
@@ -85,7 +86,7 @@
 Upgrade dependencies
 * System.ComponentModel.Annotations 4.7.0 -> 5.0.0
 * Castle.Windsor 5.1.0 -> 5.1.1
-* JetBrains.Annotations 2020.1.0.0 -> 2020.3.0.0
+* JetBrains.Annotations 2020.1.0 -> 2020.3.0
       ]]>
     </PackageReleaseNotes>
 
