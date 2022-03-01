@@ -82,11 +82,7 @@
     <PackageReleaseNotes>
       <![CDATA[
 1.0.0 Initial release
-1.1.0 Add framework net5.0
-Upgrade dependencies
-* System.ComponentModel.Annotations 4.7.0 -> 5.0.0
-* Castle.Windsor 5.1.0 -> 5.1.1
-* JetBrains.Annotations 2020.1.0 -> 2020.3.0
+1.1.0 Upgrade dependencies, Target .net core 3.1, .net 5.0, .net 6.0
       ]]>
     </PackageReleaseNotes>
 
