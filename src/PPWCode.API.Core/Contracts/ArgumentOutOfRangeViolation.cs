@@ -33,7 +33,7 @@ namespace PPWCode.API.Core.Contracts
             ParameterName = parameterName;
         }
 
-        public ArgumentOutOfRangeViolation(SerializationInfo info, StreamingContext context)
+        protected ArgumentOutOfRangeViolation(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
         }

@@ -28,7 +28,7 @@ namespace PPWCode.API.Core.Contracts
         {
         }
 
-        public InvariantViolation(SerializationInfo info, StreamingContext context)
+        protected InvariantViolation(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
         }
