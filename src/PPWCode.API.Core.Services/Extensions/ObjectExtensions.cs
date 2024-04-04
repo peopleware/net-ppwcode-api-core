@@ -16,7 +16,7 @@ namespace PPWCode.API.Core.Extensions
     public static class ObjectExtensions
     {
         private static readonly JsonSerializerSettings _settings =
-            new JsonSerializerSettings
+            new()
             {
                 PreserveReferencesHandling = PreserveReferencesHandling.All,
                 ReferenceLoopHandling = ReferenceLoopHandling.Serialize,

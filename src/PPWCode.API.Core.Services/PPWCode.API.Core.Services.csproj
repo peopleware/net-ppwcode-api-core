@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- target frameworks -->
+    <TargetFrameworks>netstandard2.0;net6.0;net8.0</TargetFrameworks>
+
+    <!-- Root Namespace -->
+    <RootNamespace>PPWCode.API.Core</RootNamespace>
+
+    <!-- nuget package -->
+    <IsPackable>true</IsPackable>
+
+    <!-- Stylecop -->
+    <CodeAnalysisRuleSet>..\StyleCop.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Castle.Core" Version="4.4.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.*" />
+  </ItemGroup>
+  
+  <Choose>
+    <When Condition=" '$(TargetFramework)' == 'net6.0' ">
+      <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.*" />
+      </ItemGroup>
+    </When>
+    <When Condition=" '$(TargetFramework)' == 'net8.0' ">
+      <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.*" />
+      </ItemGroup>
+    </When>
+  </Choose>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PPWCode.API.Core\PPWCode.API.Core.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -10,9 +10,7 @@
 // limitations under the License.
 
 using System;
-
 using JetBrains.Annotations;
-
 #if NETCOREAPP3_1_OR_GREATER
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -34,22 +32,16 @@ namespace PPWCode.API.Core.Services
     {
         private readonly Lazy<JsonSerializerSettings> _cachedSettings;
 
-#if NETCOREAPP3_1_OR_GREATER
-
-        public JsonFormatterService(
-            [NotNull] IOptions<MvcNewtonsoftJsonOptions> options)
+#if NET6_0_OR_GREATER
+        public JsonFormatterService([System.Diagnostics.CodeAnalysis.NotNull] IOptions<MvcNewtonsoftJsonOptions> options)
         {
             _cachedSettings = new Lazy<JsonSerializerSettings>(() => options.Value.SerializerSettings);
         }
-
 #elif NETSTANDARD2_0
-
-        public JsonFormatterService(
-            [NotNull] JsonSerializerSettings serializerSettings)
+        public JsonFormatterService([NotNull] JsonSerializerSettings serializerSettings)
         {
             _cachedSettings = new Lazy<JsonSerializerSettings>(() => serializerSettings);
         }
-
 #else
      #error   Building for unsupported framework
 #endif
