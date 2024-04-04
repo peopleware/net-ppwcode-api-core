@@ -11,15 +11,12 @@
 
 using System;
 
-using JetBrains.Annotations;
-
 using Newtonsoft.Json;
 
 using PPWCode.Vernacular.Exceptions.IV;
 
 namespace PPWCode.API.Core.NewtonSoft.Json
 {
-    [UsedImplicitly]
     public class ByteArrayConverter : JsonConverter
     {
         public override bool CanRead
@@ -30,9 +27,10 @@ namespace PPWCode.API.Core.NewtonSoft.Json
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            string base64String = Convert.ToBase64String((byte[])value);
-
-            serializer.Serialize(writer, base64String);
+            if (value is byte[] bytes)
+            {
+                serializer.Serialize(writer, Convert.ToBase64String(bytes));
+            }
         }
 
         public override bool CanConvert(Type t)

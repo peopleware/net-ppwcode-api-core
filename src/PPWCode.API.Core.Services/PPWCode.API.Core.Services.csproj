@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <!-- target frameworks -->
@@ -15,8 +15,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="PPWCode.Vernacular.Exceptions.IV" Version="1.2.0-rc010014" />
-    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <PackageReference Include="Castle.Core" Version="4.4.1" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\PPWCode.API.Core.NewtonSoft\PPWCode.API.Core.NewtonSoft.csproj" />
   </ItemGroup>
 
 </Project>

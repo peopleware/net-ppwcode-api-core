@@ -13,8 +13,6 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-using Newtonsoft.Json;
-
 namespace PPWCode.API.Core
 {
     [DataContract]
@@ -26,7 +24,6 @@ namespace PPWCode.API.Core
         [DataMember]
         public TIdentity? Id { get; set; }
 
-        [JsonIgnore]
         public bool IsTransient
             => EqualityComparer<TIdentity?>.Default.Equals(Id, default);
     }
