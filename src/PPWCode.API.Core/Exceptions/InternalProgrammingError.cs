@@ -10,7 +10,9 @@
 // limitations under the License.
 
 using System;
+#if NETSTANDARD2_0
 using System.Runtime.Serialization;
+#endif
 
 using PPWCode.Vernacular.Exceptions.IV;
 
@@ -21,7 +23,9 @@ namespace PPWCode.API.Core.Exceptions
     ///     indicates a programming error inside this backend. This typically means that
     ///     some internal code is breaking pre- or post-conditions, or invariants.
     /// </summary>
+#if NETSTANDARD2_0
     [Serializable]
+#endif
     public class InternalProgrammingError : ProgrammingError
     {
         public InternalProgrammingError()
@@ -38,9 +42,11 @@ namespace PPWCode.API.Core.Exceptions
         {
         }
 
+#if NETSTANDARD2_0
         protected InternalProgrammingError(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
         }
+#endif
     }
 }

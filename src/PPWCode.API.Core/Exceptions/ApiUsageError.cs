@@ -10,7 +10,9 @@
 // limitations under the License.
 
 using System;
+#if NETSTANDARD2_0
 using System.Runtime.Serialization;
+#endif
 
 using PPWCode.Vernacular.Exceptions.IV;
 
@@ -22,7 +24,9 @@ namespace PPWCode.API.Core.Exceptions
     ///     This error typically means that the calling code is not following the contracts of
     ///     the REST api and must be fixed.
     /// </summary>
+#if NETSTANDARD2_0
     [Serializable]
+#endif
     public class ApiUsageError : ProgrammingError
     {
         public ApiUsageError()
@@ -39,9 +43,11 @@ namespace PPWCode.API.Core.Exceptions
         {
         }
 
+#if NETSTANDARD2_0
         protected ApiUsageError(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
         }
+#endif
     }
 }

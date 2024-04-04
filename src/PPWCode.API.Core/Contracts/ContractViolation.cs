@@ -9,8 +9,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+#if NETSTANDARD2_0
 using System;
 using System.Runtime.Serialization;
+#endif
 
 using JetBrains.Annotations;
 
@@ -18,7 +20,9 @@ using PPWCode.API.Core.Exceptions;
 
 namespace PPWCode.API.Core.Contracts
 {
+#if NETSTANDARD2_0
     [Serializable]
+#endif
     public class ContractViolation : InternalProgrammingError
     {
         private const string FilePathKey = nameof(FilePathKey);
@@ -37,11 +41,12 @@ namespace PPWCode.API.Core.Contracts
             LineNumber = lineNumber;
         }
 
+#if NETSTANDARD2_0
         protected ContractViolation(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
         }
-
+#endif
         public string FilePath
         {
             get => (string)Data[FilePathKey];
