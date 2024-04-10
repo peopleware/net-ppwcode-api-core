@@ -16,7 +16,7 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.*" />
-    <PackageReference Include="PPWCode.Vernacular.Exceptions.IV" Version="1.2.0-rc010014" />
+    <PackageReference Include="PPWCode.Vernacular.Exceptions.IV" Version="1.*" />
   </ItemGroup>
 
   <Choose>
