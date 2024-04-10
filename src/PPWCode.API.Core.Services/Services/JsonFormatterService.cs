@@ -34,7 +34,7 @@ namespace PPWCode.API.Core.Services
         private readonly Lazy<JsonSerializerSettings> _cachedSettings;
 
 #if NET6_0_OR_GREATER
-        public JsonFormatterService([System.Diagnostics.CodeAnalysis.NotNull] IOptions<MvcNewtonsoftJsonOptions> options)
+        public JsonFormatterService([NotNull] IOptions<MvcNewtonsoftJsonOptions> options)
         {
             _cachedSettings = new Lazy<JsonSerializerSettings>(() => options.Value.SerializerSettings);
         }
