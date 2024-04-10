@@ -1,4 +1,4 @@
-// Copyright 2020 by PeopleWare n.v..
+// Copyright 2024 by PeopleWare n.v..
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -10,9 +10,11 @@
 // limitations under the License.
 
 using System;
-using System.Runtime.Serialization;
 
 using PPWCode.Vernacular.Exceptions.IV;
+#if NETSTANDARD2_0
+using System.Runtime.Serialization;
+#endif
 
 namespace PPWCode.API.Core.Exceptions
 {
@@ -22,7 +24,9 @@ namespace PPWCode.API.Core.Exceptions
     ///     This error typically means that the calling code is not following the contracts of
     ///     the REST api and must be fixed.
     /// </summary>
+#if NETSTANDARD2_0
     [Serializable]
+#endif
     public class ApiUsageError : ProgrammingError
     {
         public ApiUsageError()
@@ -39,9 +43,11 @@ namespace PPWCode.API.Core.Exceptions
         {
         }
 
+#if NETSTANDARD2_0
         protected ApiUsageError(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
         }
+#endif
     }
 }

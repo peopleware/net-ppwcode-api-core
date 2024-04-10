@@ -1,4 +1,4 @@
-﻿// Copyright 2020 by PeopleWare n.v..
+﻿// Copyright 2024 by PeopleWare n.v..
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -15,23 +15,9 @@ using JetBrains.Annotations;
 
 namespace PPWCode.API.Core.Services
 {
-    /// <inheritdoc cref="IService" />
-    public abstract class Service : IService
+    public interface IService
     {
-        private ILogger _logger = NullLogger.Instance;
-
-        [UsedImplicitly]
-        public ILogger Logger
-        {
-            get => _logger;
-            set
-            {
-                // ReSharper disable once ConditionIsAlwaysTrueOrFalse
-                if (value != null)
-                {
-                    _logger = value;
-                }
-            }
-        }
+        [NotNull]
+        ILogger Logger { get; }
     }
 }

@@ -1,4 +1,4 @@
-// Copyright 2020 by PeopleWare n.v..
+// Copyright 2024 by PeopleWare n.v..
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -9,16 +9,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System;
-using System.Runtime.Serialization;
-
 using JetBrains.Annotations;
 
 using PPWCode.API.Core.Exceptions;
+#if NETSTANDARD2_0
+using System;
+using System.Runtime.Serialization;
+#endif
 
 namespace PPWCode.API.Core.Contracts
 {
+#if NETSTANDARD2_0
     [Serializable]
+#endif
     public class ContractViolation : InternalProgrammingError
     {
         private const string FilePathKey = nameof(FilePathKey);
@@ -37,11 +40,12 @@ namespace PPWCode.API.Core.Contracts
             LineNumber = lineNumber;
         }
 
+#if NETSTANDARD2_0
         protected ContractViolation(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
         }
-
+#endif
         public string FilePath
         {
             get => (string)Data[FilePathKey];

@@ -31,6 +31,10 @@ EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPWCode.API.Core", "src\PPWCode.API.Core\PPWCode.API.Core.csproj", "{BC345D2D-BD8C-4ACD-AC40-8FFCD043DAC8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPWCode.API.Core.Services", "src\PPWCode.API.Core.Services\PPWCode.API.Core.Services.csproj", "{28C4E389-707A-4C8D-B94D-BEB20CCC5447}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPWCode.API.Core.NewtonSoft", "src\PPWCode.API.Core.NewtonSoft\PPWCode.API.Core.NewtonSoft.csproj", "{BD9667D7-844D-477A-A0E8-1C1C581F15D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +48,13 @@ Global
 		{BC345D2D-BD8C-4ACD-AC40-8FFCD043DAC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC345D2D-BD8C-4ACD-AC40-8FFCD043DAC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC345D2D-BD8C-4ACD-AC40-8FFCD043DAC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28C4E389-707A-4C8D-B94D-BEB20CCC5447}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28C4E389-707A-4C8D-B94D-BEB20CCC5447}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28C4E389-707A-4C8D-B94D-BEB20CCC5447}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28C4E389-707A-4C8D-B94D-BEB20CCC5447}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD9667D7-844D-477A-A0E8-1C1C581F15D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD9667D7-844D-477A-A0E8-1C1C581F15D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD9667D7-844D-477A-A0E8-1C1C581F15D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD9667D7-844D-477A-A0E8-1C1C581F15D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

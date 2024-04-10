@@ -1,4 +1,4 @@
-﻿// Copyright 2020 by PeopleWare n.v..
+﻿// Copyright 2024 by PeopleWare n.v..
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -13,17 +13,16 @@ using System;
 
 using JetBrains.Annotations;
 
-#if NETCOREAPP3_1_OR_GREATER
+using Newtonsoft.Json;
+
+using PPWCode.API.Core.Extensions;
+#if NET6_0_OR_GREATER
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 #elif NETSTANDARD2_0
 #else
      #error   Building for unsupported framework
 #endif
-
-using Newtonsoft.Json;
-
-using PPWCode.API.Core.Extensions;
 
 namespace PPWCode.API.Core.Services
 {
@@ -34,22 +33,16 @@ namespace PPWCode.API.Core.Services
     {
         private readonly Lazy<JsonSerializerSettings> _cachedSettings;
 
-#if NETCOREAPP3_1_OR_GREATER
-
-        public JsonFormatterService(
-            [NotNull] IOptions<MvcNewtonsoftJsonOptions> options)
+#if NET6_0_OR_GREATER
+        public JsonFormatterService([NotNull] IOptions<MvcNewtonsoftJsonOptions> options)
         {
             _cachedSettings = new Lazy<JsonSerializerSettings>(() => options.Value.SerializerSettings);
         }
-
 #elif NETSTANDARD2_0
-
-        public JsonFormatterService(
-            [NotNull] JsonSerializerSettings serializerSettings)
+        public JsonFormatterService([NotNull] JsonSerializerSettings serializerSettings)
         {
             _cachedSettings = new Lazy<JsonSerializerSettings>(() => serializerSettings);
         }
-
 #else
      #error   Building for unsupported framework
 #endif
