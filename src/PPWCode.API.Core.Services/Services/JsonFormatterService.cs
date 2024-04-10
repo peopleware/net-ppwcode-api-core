@@ -16,7 +16,7 @@ using JetBrains.Annotations;
 using Newtonsoft.Json;
 
 using PPWCode.API.Core.Extensions;
-#if NETCOREAPP3_1_OR_GREATER
+#if NET6_0_OR_GREATER
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 #elif NETSTANDARD2_0
