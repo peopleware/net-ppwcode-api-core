@@ -1,22 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <!-- target frameworks -->
-    <TargetFrameworks>netstandard2.0;net6.0;net8.0</TargetFrameworks>
+    <Import Project="..\common.props"/>
 
-    <!-- Root Namespace -->
-    <RootNamespace>PPWCode.API.Core</RootNamespace>
+    <PropertyGroup>
+        <!-- Root Namespace -->
+        <RootNamespace>PPWCode.API.Core</RootNamespace>
+    </PropertyGroup>
 
-    <!-- nuget package -->
-    <IsPackable>true</IsPackable>
-
-    <!-- Stylecop -->
-    <CodeAnalysisRuleSet>..\StyleCop.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="PPWCode.Vernacular.Exceptions.IV" Version="1.*" />
-    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="PPWCode.Vernacular.Exceptions.IV"/>
+    </ItemGroup>
 
 </Project>

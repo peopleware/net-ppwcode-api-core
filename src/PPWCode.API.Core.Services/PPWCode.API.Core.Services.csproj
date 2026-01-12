@@ -1,25 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <!-- target frameworks -->
-    <TargetFrameworks>netstandard2.0;net6.0;net8.0</TargetFrameworks>
+    <Import Project="..\common.props"/>
 
-    <!-- Root Namespace -->
-    <RootNamespace>PPWCode.API.Core</RootNamespace>
+    <PropertyGroup>
+        <!-- Root Namespace -->
+        <RootNamespace>PPWCode.API.Core</RootNamespace>
+    </PropertyGroup>
 
-    <!-- nuget package -->
-    <IsPackable>true</IsPackable>
+    <ItemGroup>
+        <PackageReference Include="Castle.Core"/>
+    </ItemGroup>
 
-    <!-- Stylecop -->
-    <CodeAnalysisRuleSet>..\StyleCop.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Castle.Core" Version="4.4.1" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <ProjectReference Include="..\PPWCode.API.Core.NewtonSoft\PPWCode.API.Core.NewtonSoft.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\PPWCode.API.Core.NewtonSoft\PPWCode.API.Core.NewtonSoft.csproj"/>
+    </ItemGroup>
 
 </Project>
