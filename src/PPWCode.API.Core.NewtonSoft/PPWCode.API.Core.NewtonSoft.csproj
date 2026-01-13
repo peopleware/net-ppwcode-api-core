@@ -10,7 +10,6 @@
     <ItemGroup>
         <PackageReference Include="Newtonsoft.Json"/>
         <PackageReference Include="PPWCode.Vernacular.Exceptions.IV"/>
-        <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson"/>
     </ItemGroup>
 
 </Project>

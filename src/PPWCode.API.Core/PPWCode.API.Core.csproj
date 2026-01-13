@@ -7,8 +7,4 @@
         <RootNamespace>PPWCode.API.Core</RootNamespace>
     </PropertyGroup>
 
-    <ItemGroup>
-        <PackageReference Include="PPWCode.Vernacular.Exceptions.IV"/>
-    </ItemGroup>
-
 </Project>

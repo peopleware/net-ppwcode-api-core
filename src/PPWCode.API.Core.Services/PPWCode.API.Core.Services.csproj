@@ -9,6 +9,7 @@
 
     <ItemGroup>
         <PackageReference Include="Castle.Core"/>
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson"/>
     </ItemGroup>
 
     <ItemGroup>
