@@ -23,32 +23,27 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
 
-      - name: Extract version from tag
+      - name: Extract version from input tag
         id: get_version
         run: |
-          # Extract full tag (e.g., 1.2.3 or 2.0.0-beta1)
-          FULL_TAG=${GITHUB_REF#refs/tags/}
+          # Get tag from workflow input
+          FULL_TAG="${{ inputs.tag }}"
 
-          # Validate tag format
+          # Validate tag format 
           if [[ ! $FULL_TAG =~ ^[0-9]+\.[0-9]+\.[0-9]+(-.*)?$ ]]; then
             echo "ERROR: Tag '$FULL_TAG' does not match format {VERSION}"
             echo "Expected format: 1.2.3 or 2.0.0-beta1"
             exit 1
           fi
 
-          # Extract version part (strip roman numeral prefix)
-          VERSION=${FULL_TAG}
-
-          # Extract commit hash (short)
-          COMMIT_HASH=$(git rev-parse --short HEAD)
-
-          # Extract major version for AssemblyVersion (e.g., 1.2.3 -> 1.0.0.0)
-          if [[ $VERSION =~ ^([0-9]+) ]]; then
-            ASSEMBLY_VERSION="${BASH_REMATCH[1]}.0.0.0"
+          # Verify the tag exists
+          if ! git rev-parse "refs/tags/$FULL_TAG" >/dev/null 2>&1; then
+            echo "ERROR: Tag '$FULL_TAG' does not exist in the repository."
+            exit 1
           fi
 
-          # InformationalVersion = semantic version + commit hash
-          INFORMATIONAL_VERSION="${VERSION}+${COMMIT_HASH}"
+          # Extract version part (strip roman numeral prefix)
+          VERSION=${FULL_TAG}
 
           # Detect if this is a pre-release version
           if [[ $VERSION =~ - ]]; then
@@ -69,17 +64,14 @@ jobs:
             VERSION_CLEAN=""
           fi
 
+          echo "full_tag=$FULL_TAG" >> $GITHUB_OUTPUT
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "version_trimmed=$VERSION_TRIMMED" >> $GITHUB_OUTPUT
-          echo "assembly_version=$ASSEMBLY_VERSION" >> $GITHUB_OUTPUT
-          echo "informational_version=$INFORMATIONAL_VERSION" >> $GITHUB_OUTPUT
           echo "is_prerelease=$IS_PRERELEASE" >> $GITHUB_OUTPUT
           echo "version_clean=$VERSION_CLEAN" >> $GITHUB_OUTPUT
-          echo "Using tag: $FULL_TAG"
+          echo "Input tag: $FULL_TAG"
           echo "Version: $VERSION"
           echo "Version trimmed: $VERSION_TRIMMED"
-          echo "AssemblyVersion: $ASSEMBLY_VERSION"
-          echo "InformationalVersion: $INFORMATIONAL_VERSION"
           echo "Is pre-release: $IS_PRERELEASE"
           echo "Version clean: $VERSION_CLEAN"
 
