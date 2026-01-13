@@ -1,0 +1,22 @@
+////
+The changelog for a specific release.
+Note that it is best to update the changelog as new code is developed.
+
+All attributes used, must be included in this file to keep it self-contained.
+
+This file is translated into markdown and used for the release notes in the GitHub release!
+////
+
+:ppwcode-docs: https://peopleware.github.io/net-ppwcode-docs/ppwcode-api-core/
+
+=== Changes
+* Supported targets: `.NET 8.0`, `.NET 9.0`, `.NET 10.0`
+* Build and publish workflows on GitHub actions
+* Upgraded dependencies
+* Initial version of documentation, available on link:{ppwcode-docs}[PPWCode .NET Docs]
+
+=== Breaking
+* Removed contracts-like code and supporting exceptions (breaking)
+** Use `PPWCode.Vernacular.Contracts.I`, it has the same exceptions and supporting contract code
+* Removed `InternalProgrammingError` and `ApiUsageError` (breaking)
+** Exceptions were moved to `PPWCode.Vernacular.Exception.IV`

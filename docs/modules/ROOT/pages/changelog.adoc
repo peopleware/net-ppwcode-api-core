@@ -1,0 +1,50 @@
+= Changelog
+
+////
+The changelog is maintained here.
+
+Note that it is best to update the changelog as new code is developed, and that
+the link to the GitHub tag is only added once we are ready to release.
+////
+
+// some helper attributes for the release links
+:github: https://github.com/peopleware/net-ppwcode-api-core/releases/tag/
+:nuget: https://www.nuget.org/packages/PPWCode.API.Core/
+:ppwcode-docs: https://peopleware.github.io/net-ppwcode-docs/ppwcode-api-core/
+:nuget-main: https://www.nuget.org/packages/PPWCode.API.Core/
+:nuget-services: https://www.nuget.org/packages/PPWCode.API.Core.Services/
+:nuget-json: https://www.nuget.org/packages/PPWCode.API.Core.NewtonSoft/
+:main: PPWCode.API.Core
+:services: PPWCode.API.Core.Services
+:json: PPWCode.API.Core.NewtonSoft
+
+
+:release: 2.0.0
+== `{release}`
+include::partial$changelog-release-section.adoc[]
+include::partial$changelog-{release}.adoc[]
+
+:release: 1.3.0
+== `{release}`
+include::partial$changelog-release-section.adoc[]
+include::partial$changelog-{release}.adoc[]
+
+:release: 1.2.0
+== `{release}`
+include::partial$changelog-release-section-old.adoc[]
+include::partial$changelog-{release}.adoc[]
+
+:release: 1.1.0
+== `{release}`
+include::partial$changelog-release-section-old.adoc[]
+include::partial$changelog-{release}.adoc[]
+
+:release: 1.0.1
+== `{release}`
+include::partial$changelog-release-section-old.adoc[]
+include::partial$changelog-{release}.adoc[]
+
+:release: 1.0.0
+== `{release}`
+include::partial$changelog-release-section-old.adoc[]
+include::partial$changelog-{release}.adoc[]

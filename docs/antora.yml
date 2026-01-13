@@ -1,0 +1,5 @@
+name: ppwcode-api-core
+version: ~
+title: PPWCode.API.Core
+nav:
+  - modules/ROOT/nav.adoc
