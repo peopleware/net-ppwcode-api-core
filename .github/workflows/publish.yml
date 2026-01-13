@@ -272,8 +272,8 @@ jobs:
       - name: Create release ZIPs
         if: steps.get_version.outputs.is_prerelease == 'false'
         run: |
-          #cd release-artifacts
           mkdir release-artifacts
+          cd release-artifacts
 
           # Zip test and coverage raw per OS
           #zip -r -9 PPWCode.API.Core-test-output-raw_Linux_${{ steps.get_version.outputs.version }}.zip test-and-coverage-raw-Linux/
