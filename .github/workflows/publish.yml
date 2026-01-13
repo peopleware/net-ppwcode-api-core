@@ -272,18 +272,18 @@ jobs:
       - name: Create release ZIPs
         if: steps.get_version.outputs.is_prerelease == 'false'
         run: |
-#          cd release-artifacts
+          #cd release-artifacts
           mkdir release-artifacts
 
-#          # Zip test and coverage raw per OS
-#          zip -r -9 PPWCode.API.Core-test-output-raw_Linux_${{ steps.get_version.outputs.version }}.zip test-and-coverage-raw-Linux/
-#          zip -r -9 PPWCode.API.Core-test-output-raw_macOS_${{ steps.get_version.outputs.version }}.zip test-and-coverage-raw-macOS/
-#          zip -r -9 PPWCode.API.Core-test-output-raw_Windows_${{ steps.get_version.outputs.version }}.zip test-and-coverage-raw-Windows/
+          # Zip test and coverage raw per OS
+          #zip -r -9 PPWCode.API.Core-test-output-raw_Linux_${{ steps.get_version.outputs.version }}.zip test-and-coverage-raw-Linux/
+          #zip -r -9 PPWCode.API.Core-test-output-raw_macOS_${{ steps.get_version.outputs.version }}.zip test-and-coverage-raw-macOS/
+          #zip -r -9 PPWCode.API.Core-test-output-raw_Windows_${{ steps.get_version.outputs.version }}.zip test-and-coverage-raw-Windows/
 
-#          # Zip coverage HTML per OS
-#          zip -r -9 PPWCode.API.Core-coverage-report-html_Linux_${{ steps.get_version.outputs.version }}.zip coverage-report-html-Linux/
-#          zip -r -9 PPWCode.API.Core-coverage-report-html_macOS_${{ steps.get_version.outputs.version }}.zip coverage-report-html-macOS/
-#          zip -r -9 PPWCode.API.Core-coverage-report-html_Windows_${{ steps.get_version.outputs.version }}.zip coverage-report-html-Windows/
+          # Zip coverage HTML per OS
+          #zip -r -9 PPWCode.API.Core-coverage-report-html_Linux_${{ steps.get_version.outputs.version }}.zip coverage-report-html-Linux/
+          #zip -r -9 PPWCode.API.Core-coverage-report-html_macOS_${{ steps.get_version.outputs.version }}.zip coverage-report-html-macOS/
+          #zip -r -9 PPWCode.API.Core-coverage-report-html_Windows_${{ steps.get_version.outputs.version }}.zip coverage-report-html-Windows/
 
           # Zip all NuGet packages
           cd ../artifacts
