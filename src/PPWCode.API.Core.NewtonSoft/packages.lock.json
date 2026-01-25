@@ -27,8 +27,8 @@
       "PPWCode.Vernacular.Exceptions.IV": {
         "type": "Direct",
         "requested": "[2.*, )",
-        "resolved": "2.1.0",
-        "contentHash": "smMZzTunvjVKyqbfmy3ru2N8May+zU70GUuVuCgDlL3D8pRL5y6cH6vMiSs1ctbblrcoJlg8//FlRQTrFZS2Hg=="
+        "resolved": "2.2.1",
+        "contentHash": "EnSpiADCKJenktPGhgsDAnsSzbf+HTDq52Wkr2F+58/sanx2rb4//Q68SnYEaOKl/AACQBp+FOKuGih0lYYW0A=="
       },
       "StyleCop.Analyzers": {
         "type": "Direct",
@@ -81,8 +81,8 @@
       "PPWCode.Vernacular.Exceptions.IV": {
         "type": "Direct",
         "requested": "[2.*, )",
-        "resolved": "2.1.0",
-        "contentHash": "smMZzTunvjVKyqbfmy3ru2N8May+zU70GUuVuCgDlL3D8pRL5y6cH6vMiSs1ctbblrcoJlg8//FlRQTrFZS2Hg=="
+        "resolved": "2.2.1",
+        "contentHash": "EnSpiADCKJenktPGhgsDAnsSzbf+HTDq52Wkr2F+58/sanx2rb4//Q68SnYEaOKl/AACQBp+FOKuGih0lYYW0A=="
       },
       "StyleCop.Analyzers": {
         "type": "Direct",
@@ -135,8 +135,8 @@
       "PPWCode.Vernacular.Exceptions.IV": {
         "type": "Direct",
         "requested": "[2.*, )",
-        "resolved": "2.1.0",
-        "contentHash": "smMZzTunvjVKyqbfmy3ru2N8May+zU70GUuVuCgDlL3D8pRL5y6cH6vMiSs1ctbblrcoJlg8//FlRQTrFZS2Hg=="
+        "resolved": "2.2.1",
+        "contentHash": "EnSpiADCKJenktPGhgsDAnsSzbf+HTDq52Wkr2F+58/sanx2rb4//Q68SnYEaOKl/AACQBp+FOKuGih0lYYW0A=="
       },
       "StyleCop.Analyzers": {
         "type": "Direct",
