@@ -204,10 +204,9 @@ jobs:
         if: steps.get_version.outputs.is_prerelease == 'false'
         run: |
           mkdir release-artifacts
-          cd release-artifacts
 
           # Zip all NuGet packages
-          cd ../artifacts
+          cd artifacts
           zip -r -9 ../release-artifacts/PPWCode.API.Core-nuget-pkgs_${{ steps.get_version.outputs.version }}.zip *.nupkg
 
       - name: Create GitHub Release
