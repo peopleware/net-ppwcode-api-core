@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: 'The existing tag of a release or pre-release (e.g., IV/2.0.0 or IV/2.0.0-beta1)'
+        description: 'The existing tag of a release or pre-release (e.g., 2.0.0 or 2.0.0-beta1)'
         required: true
         type: string
 
@@ -17,7 +17,7 @@ jobs:
       checks: write
 
     steps:
-      - name: Checkout tag ${{ inputs.tag }}  
+      - name: Checkout tag ${{ inputs.tag }}
         uses: actions/checkout@v4
         with:
           ref: ${{ inputs.tag }}
@@ -25,18 +25,18 @@ jobs:
       - name: Extract version from tag
         id: get_version
         run: |
-          # Extract full tag (e.g., I/1.2.3 or II/2.0.0-beta1)
+          # Extract full tag (e.g., 1.2.3 or 2.0.0-beta1)
           FULL_TAG=${{ inputs.tag }}
 
-          # Validate tag format with roman numeral prefix
-          if [[ ! $FULL_TAG =~ ^[IVX]+/[0-9]+\.[0-9]+\.[0-9]+(-.*)?$ ]]; then
-            echo "ERROR: Tag '$FULL_TAG' does not match format {ROMAN}/{VERSION}"
-            echo "Expected format: I/1.2.3 or II/2.0.0-beta1"
+          # Validate tag format
+          if [[ ! $FULL_TAG =~ ^[0-9]+\.[0-9]+\.[0-9]+(-.*)?$ ]]; then
+            echo "ERROR: Tag '$FULL_TAG' does not match format {VERSION}"
+            echo "Expected format: 1.2.3 or 2.0.0-beta1"
             exit 1
           fi
 
           # Extract version part (strip roman numeral prefix)
-          VERSION=${FULL_TAG#*/}
+          VERSION=${FULL_TAG}
 
           # Extract commit hash (short)
           COMMIT_HASH=$(git rev-parse --short HEAD)
@@ -98,14 +98,14 @@ jobs:
         # ContinuousIntegrationBuild=true excludes full-framework
         # builds on Linux and macOS
         run: |
-          dotnet restore PPWCode.Vernacular.Exceptions.sln \
+          dotnet restore PPWCode.API.Core.sln \
             --locked-mode \
             -p:Configuration=Release
 
       - name: Build
         shell: bash
         run: |
-          dotnet build PPWCode.Vernacular.Exceptions.sln \
+          dotnet build PPWCode.API.Core.sln \
             --configuration Release \
             --no-restore \
             -p:ContinuousIntegrationBuild=true \
@@ -116,7 +116,7 @@ jobs:
       - name: Pack
         shell: bash
         run: |
-          dotnet pack PPWCode.Vernacular.Exceptions.sln \
+          dotnet pack PPWCode.API.Core.sln \
             --configuration Release \
             --no-build \
             --output ./artifacts \
@@ -128,11 +128,11 @@ jobs:
 
           # Zip all NuGet packages
           cd artifacts
-          zip -r -9 ../release-artifacts/PPWCode.Vernacular.Exceptions.IV-nuget-pkgs_${{ steps.get_version.outputs.version }}.zip *.nupkg
+          zip -r -9 ../release-artifacts/PPWCode.API.Core-nuget-pkgs_${{ steps.get_version.outputs.version }}.zip *.nupkg
 
       - name: Upload reproduced release artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: PPWCode.Vernacular.Exceptions.IV-nuget-pkgs_${{ steps.get_version.outputs.version }}.zip
-          path: release-artifacts/PPWCode.Vernacular.Exceptions.IV-nuget-pkgs_${{ steps.get_version.outputs.version }}.zip
+          name: PPWCode.API.Core-nuget-pkgs_${{ steps.get_version.outputs.version }}.zip
+          path: release-artifacts/PPWCode.API.Core-nuget-pkgs_${{ steps.get_version.outputs.version }}.zip
           retention-days: 30
