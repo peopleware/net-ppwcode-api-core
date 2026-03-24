@@ -18,6 +18,7 @@ ProjectSection(SolutionItems) = preProject
 	src\common-tests.props = src\common-tests.props
 	src\common.props = src\common.props
 	src\Directory.Packages.props = src\Directory.Packages.props
+	global.json = global.json
 EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPWCode.API.Core", "src\PPWCode.API.Core\PPWCode.API.Core.csproj", "{BC345D2D-BD8C-4ACD-AC40-8FFCD043DAC8}"
