@@ -1,0 +1,18 @@
+////
+The changelog for a specific release.
+Note that it is best to update the changelog as new code is developed.
+
+All attributes used, must be included in this file to keep it self-contained.
+
+This file is translated into markdown and used for the release notes in the GitHub release!
+////
+
+=== Fixes
+* DebugType is set to portable
+
+=== Changes
+* use latest sdk 10.0.201
+
+=== Breaking
+* remove Castle.Core package dependency
+** IService / Service is removed. If you need those, add them in your own project.

@@ -18,6 +18,10 @@ the link to the GitHub tag is only added once we are ready to release.
 :services: PPWCode.API.Core.Services
 :json: PPWCode.API.Core.NewtonSoft
 
+:release: 3.0.0
+== `{release}`
+include::partial$changelog-release-section.adoc[]
+include::partial$changelog-{release}.adoc[]
 
 :release: 2.1.1
 == `{release}`
