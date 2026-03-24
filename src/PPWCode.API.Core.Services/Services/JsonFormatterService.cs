@@ -23,9 +23,7 @@ using PPWCode.API.Core.Extensions;
 namespace PPWCode.API.Core.Services
 {
     [UsedImplicitly]
-    public class JsonFormatterService
-        : Service,
-          IJsonFormatterService
+    public class JsonFormatterService : IJsonFormatterService
     {
         private readonly Lazy<JsonSerializerSettings> _cachedSettings;
 

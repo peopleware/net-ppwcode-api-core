@@ -17,7 +17,7 @@ using Newtonsoft.Json;
 
 namespace PPWCode.API.Core.Services
 {
-    public interface IJsonFormatterService : IService
+    public interface IJsonFormatterService
     {
         [NotNull]
         JsonSerializerSettings Settings { get; }
