@@ -7,12 +7,13 @@ All attributes used, must be included in this file to keep it self-contained.
 This file is translated into markdown and used for the release notes in the GitHub release!
 ////
 
-=== Fixes
-* DebugType is set to portable
 
 === Changes
-* use latest sdk 10.0.201
+* use dotnet sdk `10.0.203`
+* use portable pdbs
+
 
 === Breaking
-* remove Castle.Core package dependency
-** IService / Service is removed. If you need those, add them in your own project.
+* remove `Castle.Core` dependency
+* `IService` and `Service` is removed
+** if needed, recreate them in your project
