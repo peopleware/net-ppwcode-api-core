@@ -9,8 +9,9 @@ This file is translated into markdown and used for the release notes in the GitH
 
 
 === Changes
-* use dotnet sdk `10.0.203`
+* use dotnet sdk `10.0.301`
 * use portable pdbs
+* upgrade dependencies
 
 
 === Breaking
