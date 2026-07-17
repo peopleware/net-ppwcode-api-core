@@ -38,14 +38,14 @@ jobs:
       - name: Restore dependencies
         shell: bash
         run: |
-          dotnet restore PPWCode.API.Core.sln \
+          dotnet restore PPWCode.API.Core.slnx \
             --locked-mode \
             -p:Configuration=Release
 
       - name: Build
         shell: bash
         run: |
-          dotnet build PPWCode.API.Core.sln \
+          dotnet build PPWCode.API.Core.slnx \
             --configuration Release \
             --no-restore \
             -p:ContinuousIntegrationBuild=true
